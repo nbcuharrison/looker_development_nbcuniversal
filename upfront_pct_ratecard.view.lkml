@@ -20,13 +20,15 @@ view: upfront_pct_ratecard {
   measure: prop_pct_ratecard {
     type: number
     value_format: "0.00\%"
-    sql: ${prop_sales_dollars}/${prop_ratecard_dollars} ;;
+    sql: |
+      CASE WHEN ${prop_ratecard_dollars} > 0 THEN ${prop_sales_dollars}/${prop_ratecard_dollars} ELSE 0 END;;
   }
 
   measure: index_to_average {
     type: number
     value_format: "0.00\%"
-    sql: ${client_pct_ratecard}/${prop_pct_ratecard};;
+    sql: |
+      CASE WHEN ${prop_pct_ratecard} > 0 THEN ${client_pct_ratecard}/${prop_pct_ratecard} ELSE 0 END;;
   }
 
   measure: client_sales_dollars {
@@ -43,7 +45,7 @@ view: upfront_pct_ratecard {
   measure: client_pct_ratecard {
     type: number
     value_format: "0.00\%"
-    sql: ${client_sales_dollars}/${client_ratecard_dollars};;
+    sql: CASE WHEN ${client_ratecard_dollars} > 0 THEN /${client_sales_dollars}/${client_ratecard_dollars} ELSE 0 END;;
   }
 
   dimension: daypart {
