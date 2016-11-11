@@ -45,7 +45,7 @@ view: upfront_pct_ratecard {
   measure: client_pct_ratecard {
     type: number
     value_format: "0.00\%"
-    sql: CASE WHEN ${client_ratecard_dollars} > 0 THEN /${client_sales_dollars}/${client_ratecard_dollars} ELSE 0 END;;
+    sql: CASE WHEN ${client_ratecard_dollars} > 0 THEN ${client_sales_dollars}/${client_ratecard_dollars} ELSE 0 END;;
   }
 
   dimension: daypart {
