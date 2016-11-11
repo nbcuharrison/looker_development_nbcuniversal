@@ -56,8 +56,8 @@ view: upfront_pct_ratecard {
 #     sql: ${TABLE}.prop_dp_pct_rc ;;
 #   }
 
-  dimension: prop_ratecard_dollars {
-    type: number
+  measure: prop_ratecard_dollars {
+    type: sum
     value_format: "$#,##0.00"
     sql: ${TABLE}.prop_ratecard_dollars ;;
   }
