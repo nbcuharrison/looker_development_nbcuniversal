@@ -1,10 +1,10 @@
-- dashboard: test
-  title: Test
-  layout: tile
-  tile_size: 100
+# - dashboard: test
+#   title: Test
+#   layout: tile
+#   tile_size: 100
 
-#  filters:
+# #  filters:
 
-  elements:
+#   elements:
 
-  - name: foo
+#   - name: foo

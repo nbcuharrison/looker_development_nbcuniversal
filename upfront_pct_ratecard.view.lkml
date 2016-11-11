@@ -62,8 +62,8 @@ view: upfront_pct_ratecard {
     sql: ${TABLE}.prop_ratecard_dollars ;;
   }
 
-  dimension: prop_sales_dollars {
-    type: number
+  measure: prop_sales_dollars {
+    type: sum
     value_format: "$#,##0.00"
     sql: ${TABLE}.prop_sales_dollars ;;
   }
